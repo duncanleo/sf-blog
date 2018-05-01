@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel='stylesheet' type='text/css' href='stylesheet.css' />
+    <title>Week 2</title>
+</head>
+
+<body id='body' dir='auto'>
+    <div class='entry' entryUUID='D16BD79AD3DB45DFBF71C3CDC247AA29'>
+        <a href='dayone2://view?entryId=D16BD79AD3DB45DFBF71C3CDC247AA29'><h1 class='date'>Friday, 8 April 2016 at 9:11 PM</h1></a>
+        <div class='location'>37.7301° N, 122.418° W</div>
+        <div dir='auto'>
+            <h1>Weekly Log #2</h1>
+
+            <p>It’s my second week in SF. Here’s another log of my time here!</p>
+
+            <h1>The hostel</h1>
+
+            <p><img src='photos/ec261ce8ea18a6116b75190dc10a685f.jpeg'></p>
+
+            <p>I finally have a shot of the place I’m staying at. It’s called Cornerstone Academy, and comprises of a hostel, a school, and a church. There’s three branches (not sure if that’s the correct term) of it, one on Silver Ave, one on Cambridge
+                St and another on Lawton St.</p>
+
+            <h1>UserTesting</h1>
+
+            <h2>Boot camp</h2>
+
+            <p>We had boot camp at work on Monday and Tuesday, where our colleague Benjamin Russo led us on an orientation program to the company, its product, and our colleagues.</p>
+
+            <h2>Ruby on Rails</h2>
+
+            <h3>Other frameworks</h3>
+
+            <p>I’ve dealt with a similar framework before, namely ASP.NET, which was pretty slow unless you ran a dedicated server. Ruby on Rails is much faster than ASP, but there is still a slight delay when you start the server. Another language/framework
+                I’ve used, Go with its built-in<code>html/template</code> package, is even faster especially when compiled as a static native binary.</p>
+
+            <p>One great thing with Rails is the reloading feature - not only are changes in your HTML/CSS/JS updated without requiring a server restart, but even Ruby code is updated! That is something certainly nearly impossible with a compiled language
+                like Go.</p>
+
+            <h3>Let the magic do the work</h3>
+
+            <p>I guess that I’m just not a big fan of Rails’ automatic handling of many things. In the controllers, you can access variables like session and cookie directly. Unless you are a very experienced Rails developer, these would not occur naturally,
+                and I stumble quite a bit when these variables can be called out of thin air. It’s kind of like ES5’s <code>this</code> parameter, where half the time you aren’t quite sure what <code>this</code> is pointing to. However, I guess I’ll like
+                it a bit more as I become more familiar with it 😄.</p>
+
+            <h3>Templating engines</h3>
+
+            <p>I thought that I would just mention this. Rails uses a variety of such engines, with the common ones being ERB and HAML. Both allow you to define HTML elements, like as follows:</p>
+
+            <pre><code class="ruby"># ERB
+&lt;p&gt;Product Name: &lt;%= product.name %&gt;&lt;/p&gt;
+
+# HAML
+%p
+  Product Name: #{product.name}
+</code></pre>
+
+            <p>Go comes with a built-in <code>html/template</code> package:</p>
+
+            <pre><code class="go">&lt;p&gt;Product Name: {product.name}&lt;/p&gt;
+</code></pre>
+
+            <p>These templating engines are extremely close to the original HTML element and do not introduce too many elements or controls of its own.</p>
+
+            <p>ASP.NET, on the other hand introduces too many of such controls. Obviously, they eventually are delivered to the browser client as valid HTML, but they make the source code and the eventual product so different it becomes extremely difficult
+                to do debugging. Some of these controls even require client-side redirects or form submissions to work, which makes the codebase unnecessarily complicated. Furthermore, from my past experience working with ASP, once in a while you find
+                yourself implementing one of these controls even though a client-side Javascript solution would solve the problem easily.</p>
+
+            <pre><code class="cs">&lt;asp:RequiredFieldValidator ID=&quot;rfvcandidate&quot;
+   runat=&quot;server&quot; ControlToValidate =&quot;ddlcandidate&quot;
+   ErrorMessage=&quot;Please choose a candidate&quot;
+   InitialValue=&quot;Please choose a candidate&quot;&gt;
+
+&lt;/asp:RequiredFieldValidator&gt;
+</code></pre>
+
+            <p>TL:DR: Stay away from ASP. Most of the world has already done so, anyway.</p>
+
+            <h1>Kaneshka’s bikes</h1>
+
+            <p><img src='photos/c055d198799e110fc6cfb2c58bf77b7d.jpeg'></p>
+
+            <p>We had a meetup/networking event with some other NP students at the Plug and Play Tech Centre. We had a good talk with Kaneshka, in which he talked about his past and the present, working on his electric bikes. In the photo above: Kaneshka
+                (Biruni Bikes), Jenny, Shastri (Newzsocial), and Peter.</p>
+
+            <h1>Video Production Meetup</h1>
+
+            <p><img src='photos/2a60202868c50ab6f405490ccbf39b14.jpeg'></p>
+
+            <p>On Thursday, we went for a video production meetup with Harry, where the speakers talked about adding accessibility to videos for the disabled. Haben and Rick talked a bit on their disabilities and the tool they use for communication (a digital
+                braille device, which can be seen being held by Haben). Ben and Ken talked about some accessibility-enabling technologies such as HTML5 captioning support and the machine transcription Google built into YouTube.</p>
+
+            <p>Pictured above: Ann Cannon (SDI Media), Ken Harrenstein (Google), Haben Girma (White House Champion of Change), Ben Cruz (Google) and Rick Boggs (Actor, musician and entrepreneur). The guy in blue is the epic dude who types out everything
+                he hears in real-time, which is displayed on the screen. He does this for Haben to understand what’s going on through her braille device.</p>
+
+            <p>On Friday, we went to the Social Security office and applied for an Social Security number.</p>
+
+            <h1>Saturday</h1>
+
+            <p><img src='photos/6b57d9d61a577284f4a72dec5f30f592.jpeg'></p>
+
+            <p>We went to Union Square, which is a well-known shopping district. Over here, you’d find the San Francisco Apple Store, Moscone Center (where Apple hosts all their events), and many flagship stores, from brands such as Levi’s and Nike.</p>
+
+            <p><img src='photos/b4ba0f7bf021198c6d2a4aa24347c630.jpeg'></p>
+
+            <p>We ate at Mel’s Drive-In for lunch, which is an iconic American diner that serves really great (and huge!) burgers. Apparently there’s a fake rip-off in Singapore’s Universal Studios.</p>
+
+            <h1>Sunday</h1>
+
+            <p><img src='photos/eb3b19a8a71be70ec1f13559adf4cd8b.jpeg'></p>
+
+            <p>We went to Point Lobos and Land’s End, which is really what it is - it’s an area near the north-west end of the city. Google Maps screenshot here just to illustrate what I mean.</p>
+
+            <p><img src='photos/ff2daa661baee0dc197db9810f54e6b6.jpeg'></p>
+
+            <p>The area faces the Pacific Ocean, which is supposed to be around sub-15°C throughout the year. Because of this, the winds blowing from its direction tend to be rather chilly. It’s also apparently why San Francisco enjoys cool temperatures
+                throughout most of the year, sans a couple of days. Land’s End is a really tranquil place, and its stunning views are a great reward after some tiring biking.</p>
+
+            <p><img src='photos/8870096776c5b951cca072d91b60d14e.jpeg'></p>
+
+            <p>Lunch was Vietnamese Pho, which was really good! While the food prices here are expensive if you consider the exchange rate (i.e. this was around 10+ USD, which translates to around 14 SGD, it’s really just how food is priced here. The food
+                also tends to be of great quality, so I’m not complaining 😁)</p>
+        </div>
+    </div>
+    <script src='javascript.js'></script>
+    <!-- Syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/monokai-sublime.min.css">
+    <style>
+        code span {
+            font-family: initial;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- End syntax highlighting -->
+</body>
+
+</html>

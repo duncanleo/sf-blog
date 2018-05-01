@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel='stylesheet' type='text/css' href='stylesheet.css' />
+    <title>Week 4</title>
+</head>
+
+<body id='body' dir='auto'>
+    <div class='entry' entryUUID='05A53B24E45046FEA62015EDD392C630'>
+        <a href='dayone2://view?entryId=05A53B24E45046FEA62015EDD392C630'><h1 class='date'>Sunday, 24 April 2016 at 6:04 PM</h1></a>
+        <div class='location'>37.7298° N, 122.418° W</div>
+        <div dir='auto'>
+            <h1>Weekly Log #4</h1>
+
+            <h1>UserTesting</h1>
+
+            <p>For some reason, a string of my colleagues have been getting into accidents/injuries 🙁</p>
+
+            <p>I’ve started putting serious work into a desktop client I’m building for the company to use, based on the Electron framework.</p>
+
+            <h2>Electron</h2>
+
+            <p>This is a framework for people to build a desktop app using web technologies, written by GitHub. The underlying engine is powered by Chromium (the open-source backbone of Google Chrome), which packs a V8 Javascript (JS) engine. Notable apps
+                written using Electron include the Slack OS X client, the Atom editor and Visual Studio Code. The framework brings in a few concepts which I’ll explain below.</p>
+
+            <h3>Concepts</h3>
+
+            <h4>Main process</h4>
+
+            <p>This main process is the thing Electron launches. It runs a JS file of your choice and you can use this to handle app events (such as closing, opening) and create windows (which is where you set up the render process(es), explained next).</p>
+
+            <h4>Render process</h4>
+
+            <p>Each window has a render process. They work on displaying a specified HTML web page in a window.</p>
+
+            <h4>Webview element</h4>
+
+            <p>Electron introduced this special element as a way to contain web pages in the render windows. It’s kind of like an iframe, but it lets you do extra things like injecting CSS, JS and specifying your user agent.</p>
+
+            <p>The whole point of the desktop client is to replace a series of Chrome extensions written by people in and outside of the company, all designed to add specific functionality to Trello, a Japanese kanban-like card management website. These
+                extensions did not work very well, with some of them eating up large amounts of CPU and others messing up another extension’s functionality. For this desktop client, I would re-write the functionality in a way that they all worked well
+                and in an efficient manner.</p>
+
+            <h3>Initial writing of the client</h3>
+
+            <p>Although the base is Chromium, there is no support for Google Chrome’s extensions API, which meant I had to re-write the functionality from scratch. It turned out to be a good thing, really - the code ends up being much cleaner.</p>
+
+            <h3>setInterval - simple but inefficient</h3>
+
+            <p>setInterval is a very direct way of executing injection code on the Trello webpage. It’s a really simple flow to have the code execute per every specified duration. However, it’s not good CPU-wise and the code would run even if the user was
+                not doing anything on the page (i.e. the window left in the background, etc). A library called <a href="https://github.com/Swader/TrelloUI">TrelloUI</a> attempts to solve the issue by providing custom JS events but it uses setInterval
+                internally. Eventually, I opted to use a MutationObserver, which can observe certain DOM elements and trigger code when the DOM changes. These should not trigger when the user is not interacting with the site, as there would not be changes
+                on the DOM.</p>
+
+            <h3>Re-writing the extensions’ functionality by hand</h3>
+
+            <p>Some of the extensions’ functionality were pretty simple conceptually, and I wrote the functionality back up without referencing the extension’s original code. The more complicated ones required referencing, but almost no lines of code were
+                directly lifted off onto the desktop client.</p>
+
+            <p>There’ll be more on the client in the coming weeks as I work on it 😄.</p>
+
+            <h1>Saturday, Half Moon Bay</h1>
+
+            <p>We went to Half Moon Bay on Saturday, by taking Caltrain to Hillside and biking the rest.</p>
+
+            <p><img src='photos/a258633ab1c66b3c82366bd3866ee845.jpeg'></p>
+
+            <p>the beautiful (and windy!) Pacific Ocean</p>
+
+            <p><img src='photos/2d3e0e31ff45685ccc4698b035802a51.jpeg'></p>
+
+            <p>The coastline, with Highway 101 (I think)</p>
+
+            <p><img src='photos/0a43a5707714bddf157752972e4bad82.jpeg'></p>
+
+            <p>the formula for decent photography: give it lots of headroom! 📷</p>
+
+            <p><img src='photos/a84f4439bb173e97bb727e39d0f80f23.jpeg'></p>
+
+            <p>Where we had lunch: Fish &amp; Chips for me. I’m still not sure why the cashier added 2 bowls of Clam Chowder to my receipt (and charged me for it, of course 💸). Jurvis says it was good though, lol…</p>
+
+            <p>The trails on the mountain were quite rough after a while, and then it became seriously narrow, where it was too difficult for me to balance on my bike. Afterwards, we had to drag the bikes up an insanely steep slope, so we pretty much agreed
+                that the trail wasn’t exactly designed for bikes.</p>
+
+            <h1>Sunday</h1>
+
+            <p>On Sunday, we just went out for lunch at San Bruno Ave.</p>
+
+            <p><img src='photos/d6142dff1d782a755deb5c301ab4d921.jpeg'></p>
+
+            <p>Lunch @ Wing Hing Restaurant, with Ivan and Joshua. Garlic w/ Bai Cai, Char Siew, Roast Pork and Curry Tomato Beef Hor Fun. 👍</p>
+        </div>
+    </div>
+    <script src='javascript.js'></script>
+</body>
+
+</html>

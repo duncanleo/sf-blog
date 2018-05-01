@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel='stylesheet' type='text/css' href='stylesheet.css' />
+</head>
+
+<body id='body' dir='auto'>
+    <div class='entry' entryUUID='69BCC6AD6F3C4C878D82B7D443AEE730'>
+        <a href='dayone2://view?entryId=69BCC6AD6F3C4C878D82B7D443AEE730'><h1 class='date'>Sunday, 22 May 2016 at 9:58 PM</h1></a>
+        <div class='location'>731 Sweeny St, San Francisco, CA, United States</div>
+        <div dir='auto'>
+            <h1>Weekly Log #8</h1>
+
+            <h1>UserTesting</h1>
+
+            <h2>Electron client</h2>
+
+            <p>This week, we commenced what we call The Grand Refactor on the codebase of the Trello client.</p>
+
+            <h3>Menu code</h3>
+
+            <p>For starters, if you visit the following <a href="http://electron.atom.io/docs/api/menu/">link</a>, you’ll notice many lines of what Electron calls a menu template. That sets up the menu items and lists you see on all three platforms.</p>
+
+            <p><img src='photos/f5aeb416a537f649d73a6a62eebc1dd2.jpeg'></p>
+
+            <p>Mac OS X’s menu bar</p>
+
+            <p>That menu code was taking up far too many lines on the main Javascript file, which contained other important code like reading/writing settings, setting up new windows, and handling app quitting. The menu code stuck out like a sore thumb,
+                taking up all the space in the middle of the file. In the refactor, we moved the menu code out to a separate file, and introduced a MenuBuilder class to reach in to the template and inject click handlers.</p>
+
+            <h3>Fetch</h3>
+
+            <p>Fetch is a new API for making HTTP requests in the browser. It’s the successor to the old clunky XMLHttpRequest API. Compare the following:</p>
+
+            <pre><code class="javascript">// XMLHttpRequest
+var req = new XMLHttpRequest();
+req.addEventListener(&quot;load&quot;, function() {
+    console.log(this.responseText);
+});
+req.open(&quot;GET&quot;, "http://www.google.com");
+req.send();
+
+// Fetch
+fetch('http://www.google.com&#39;)
+.then(function(response) {
+  console.log(response.text());
+});
+</code></pre>
+
+            <p>Fetch uses Promises, which is a cleaner way to do asynchronous operations in Javascript. We were already using Fetch before the refactor, but it was still a bit clunky. There were two functions we kept using in the fetch chain, one to check
+                the return status to be 200, and one to return the JSON form of the response. In the refactor, we created a new function called <code>fetchJSON()</code> that was essentially the same as <code>fetch()</code>, but in that it already had
+                the other two functions in its promises chain.</p>
+
+            <h2>Hubot</h2>
+
+            <p>The chat bot got its green light, and it’s now in use! It now posts updates to active, in-use Slack channels. The best thing? James, my supervisor, managed to find a profile image they used on the older bot, which this one replaced. This bot
+                now has a face!</p>
+
+            <h1>Saturday</h1>
+
+            <p>We went to Maker Faire, which is a major event in the hardware space.</p>
+
+            <p><img src='photos/248297a1571d3a4b53cf362615f8c9ee.jpeg'></p>
+
+            <p>We went to the expo building, where we found a Pebble smartwatch booth at the entrance. They were selling their Time and Time Round watches on a discount, so I got one.</p>
+
+            <p><img src='photos/b179bf694651970c7ddb3408adf5af0d.jpeg'></p>
+
+            <p>Yay</p>
+
+            <p>Unfortunately for me, Pebble announced their new Kickstarter just a few days later, where they introduced its successor 😒</p>
+        </div>
+    </div>
+    <script src='javascript.js'></script>
+    <!-- Syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/monokai-sublime.min.css">
+    <style>
+        code span {
+            font-family: initial;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- End syntax highlighting -->
+</body>
+
+</html>

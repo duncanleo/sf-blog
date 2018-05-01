@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel='stylesheet' type='text/css' href='stylesheet.css' />
+</head>
+
+<body id='body' dir='auto'>
+    <div class='entry' entryUUID='1237017455704B1E9BCFE3F6B0D0AE03'>
+        <a href='dayone2://view?entryId=1237017455704B1E9BCFE3F6B0D0AE03'><h1 class='date'>Saturday, 14 May 2016 at 11:21 AM</h1></a>
+        <div class='location'>707 Sweeny St, San Francisco, CA, United States</div>
+        <div dir='auto'>
+            <h1>Weekly Log #7</h1>
+
+            <h1>UserTesting</h1>
+
+            <h2>Trello client</h2>
+
+            <p>We made more bug fixes to the client, such as moving the settings page out of localStorage, which was shared with the Trello site itself and ran the risk of being overwritten.</p>
+
+            <p>Also, I finally figured out how Electron’s inter-process communication (IPC) system worked. It’s their system of transferring data between the main, render and (in our case) web view processes. It is capable of working both synchronously and
+                asynchronously.
+            </p>
+
+            <p><img src='photos/76e6ddf139381cd50b3633c88eb6fdc0.jpeg'></p>
+
+            <p>How the IPC system works.
+                <br> The <code>send</code> calls can be replaced with <code>sendSync</code>, where the calls will execute synchronously. This is where I encountered strange behaviour - returning <code>null</code> on a synchronous call will crash the application
+                on launch.</p>
+
+            <p>With the IPC system, the settings page, present in each window, runs in render processes, and any setting change is sent to the main process. The main process then saves the change and sends an update command to each window, which in turns
+                tell each web view to re-run their inject scripts.</p>
+
+            <h2>Slack integration</h2>
+
+            <p>After looking through the old Hubot-based bot in the company and at the current version of Hubot’s documentation, I decided to port over the existing work to use Hubot instead. It would have been much more maintainable as compared to my custom
+                solution that clobbered Node.js, Express, and a Slack API package together.</p>
+
+            <p><a href="https://hubot.github.com">Hubot</a> works as a generic bot system. It is able to respond to incoming messages, web requests, and send messages out. Its adapter system allows a Hubot to technically be able to work with any chat platform
+                that has a Hubot adapter - examples are Slack and HipChat. In practice, though, each chat platform has different message formats and capabilities, which make it difficult to write a Hubot to be cross-platform.</p>
+
+            <p>The framework in effect is not too different from my custom solution - it runs on Node, and uses the Express web framework too. It itself and most Hubot scripts are written in CoffeeScript, a language that compiles into Javascript. Fortunately,
+                you can still write them in normal Javascript. In fact, if you use a relatively recent version of Node, you can write them in ES6 without Babel.</p>
+
+            <pre><code class="javascript">module.exports = (robot) =&gt; {
+  robot.hear(/badger/i, (res) =&gt; {
+    // code here
+  });
+  robot.respond(/open the pod bay doors/i, (res) =&gt; {
+    // code here
+  });
+};
+</code></pre>
+
+            <p>Hubot scripts can also access environment variables, making it easy to use sensitive credentials in the app.</p>
+
+            <p>The main great part of Hubot is that many people are using it. What this means is that many of their scripts can be re-used in your own Hubot. This is done using Hubot’s built-in <code>external-scripts</code> functionality and the <code>npm</code>                package manager. For example, here are the steps to install a quote script:</p>
+
+            <ol>
+                <li><code>npm</code> install the package
+                    <code>npm install hubot-space-bot</code></li>
+                <li>Append <code>hubot-space-bot</code> to the JSON array at <code>external-scripts.json</code></li>
+            </ol>
+
+            <p>Your Hubot is now capable of giving space quotes!</p>
+
+            <p>GitHub’s documentation is really comprehensive and easy to understand. The switch to Hubot makes the code much easier to maintain for anyone else than myself 😁</p>
+
+            <h1>Saturday</h1>
+
+            <p>Went out for lunch with the interns and Harry. I had a Japanese bento:</p>
+
+            <p><img src='photos/e3d26e29efe010d1845d343f3138d52a.jpeg'></p>
+
+            <p>Beef Teriyaki, Tempura (assorted) and Salmon sashimi. Pretty decent 🍽</p>
+
+            <p>In the late afternoon, we had a barbecue party for intern graduates (from 1LightMedia I think).</p>
+
+            <h1>Sunday</h1>
+
+            <p>Tried out Uber’s new UberEATS service. Ordered from a Shanghai eatery about a 10 minute drive away.</p>
+
+            <p><img src='photos/597942f070846f9604e873862dd6b8d1.jpeg'></p>
+
+            <p>Beef Fried Rice and Steamed Pork dumplings </p>
+
+            <p>The food arrived in about half an hour, and the delivery fee was $5 (got a discount of the same amount due to UberEAT’s introductory promotion).</p>
+
+            <p>In the afternoon, I went to watch the new Captain America movie.</p>
+        </div>
+    </div>
+    <script src='javascript.js'></script>
+    <!-- Syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/monokai-sublime.min.css">
+    <style>
+        code span {
+            font-family: initial;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- End syntax highlighting -->
+</body>
+
+</html>

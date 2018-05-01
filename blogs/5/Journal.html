@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel='stylesheet' type='text/css' href='stylesheet.css' />
+    <title>Week 5</title>
+</head>
+
+<body id='body' dir='auto'>
+    <div class='entry' entryUUID='66AC19579E094633BF39740C5A1934A1'>
+        <a href='dayone2://view?entryId=66AC19579E094633BF39740C5A1934A1'><h1 class='date'>Saturday, 30 April 2016 at 4:56 PM</h1></a>
+        <div class='location'>727 Sweeny St, San Francisco, CA, United States</div>
+        <div dir='auto'>
+            <h1>Weekly Log #5</h1>
+
+            <h1>UserTesting</h1>
+
+            <h2>Gulp the whole thing</h2>
+
+            <p>Jurvis had done a decent bit of front-end web development before, and he decided to place the Electron app’s JS and CSS on Gulp processes. Gulp is a framework that lets you place your CSS and JS through a build process.</p>
+
+            <h3>SASS</h3>
+
+            <p>SASS is a CSS preprocessor, it brings in extra functionality (such as writing variables) in your SASS files (which are special CSS files). During the build process, SASS will fill in the variables and spit out the “compiled” file, ready for
+                use in the browser (or Electron’s Chromium, in this case). It lets you maintain cleaner CSS while making its “compiled” product still usable and valid.</p>
+
+            <h3>Babel</h3>
+
+            <p>Babel transpires ES6 JS code into ES5 JS code. The Chromium in Electron does not seem to support ES6 outside of the main process and this step is necessary for us to maintain an ES6 codebase throughout.</p>
+
+            <h2>Bring in the ES6 goodness</h2>
+
+            <p>The Javascript language specification introduced a new version called ECMAScript 6 (aka ECMAScript 2015). It brings in a much improved syntax, which I’ll show below:</p>
+
+            <h3>Function declarations</h3>
+
+            <pre><code class="javascriptu">// ES5 function
+function hi() {
+    console.log(‘bye’);
+}
+
+// ES6 function
+let hi = () =&gt; {
+    console.log(‘bye’);
+}
+</code></pre>
+
+            <h3>String concatenation</h3>
+
+            <pre><code class="javascript">var number = 9;
+
+// ES5
+var str = ‘The number is ‘ + 9;
+
+// ES6
+let str = `The number is ${number}`;
+</code></pre>
+
+            <h3>For-of loop</h3>
+
+            <p>ES5 and before hasn’t provided good ways to iterate over data structures. ES6 introduces the new <code>for-of</code> loop!</p>
+
+            <pre><code class="javascript">var array = [‘apple’, ‘banana’, ‘chocolate’];
+// This loop came from the C family of languages
+for (var i = 0; i &lt; array.length; i++) {
+    console.log(array[i]); // Prints out “apple”, “banana”, “chocolate”
+}
+
+// This loop doesn’t do anything particularly useful
+for (var item in array) {
+    console.log(item); // Prints out “0”, “1”, “2”, rather useless.
+}
+
+// This loop was introduced in ES5. It has no way of letting you break the loop in between.
+array.forEach(function(item) {
+    console.log(item); // Prints out “apple”, “banana”, “chocolate”
+});
+
+// ES6 for-of loop. Finally, we have a nice, clean and fully functional for loop!
+for (var item of array) {
+    console.log(item); // Prints out “apple”, “banana”, “chocolate”
+}
+</code></pre>
+
+            <p>There are more features which help to maintain a cleaner codebase, such as classes and <code>let</code>/<code>const</code> declarations. The addition of ES6 has really helped with maintaining the code 😄.</p>
+
+            <h2>ESLint</h2>
+
+            <p>This is a really helpful tool for helping you maintain clean JS code. It checks for many things (such as unused variables and misplaced indentation). It works as a plugin for your text editor (Atom, Sublime Text and VS Code all have it) and
+                it lints your code according to a list of rules defined in <code>.eslintrc</code>.</p>
+
+            <p>So now, before running the app in the debug environment, Gulp runs, builds the SASS and Babel pipelines, before having Electron run the app with their products.</p>
+
+            <h1>Saturday</h1>
+
+            <p>Saturday, lunch at this place called Koja (Korean and Japanese fusion food)</p>
+
+            <p><img src='photos/9e8fcd07cfa6449151d4c6108de7e2ee.jpeg'></p>
+
+            <p>Chicken bowl
+                <br>
+                <em>Korean bbq chicken, sesame vinaigrette lettuce, tomato, cilantro, spicy gochujang sauce, sesame seeds, lemon wedge</em></p>
+
+            <h1>Sunday</h1>
+
+            <p>On Sunday, we went for a hike at La Honda with a group of friends</p>
+
+            <p><img src='photos/bfa57f6b377ca2601fa1822b5ad3c00e.jpeg'></p>
+
+            <p>shot of some vegetation by Kelly Nickels</p>
+
+            <p>It was quite a long walk up and down until we eventually reached a small lake, where we had some food before moving on. Later on, we got off the trail and got lost. One of our friends forged ahead and we lost him, but he eventually reached
+                our cars and left a note.</p>
+
+            <p>The part where we got off the trail was something I appreciate for having done, but not something I would do again 😅. Moving around in the forest where little to no people go (as evident from lots of spider webs) and walking through the endless
+                trees was certainly interesting.</p>
+        </div>
+    </div>
+    <script src='javascript.js'></script>
+    <!-- Syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/monokai-sublime.min.css">
+    <style>
+        code span {
+            font-family: initial;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- End syntax highlighting -->
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel='stylesheet' type='text/css' href='stylesheet.css' />
+</head>
+
+<body id='body' dir='auto'>
+    <div class='entry' entryUUID='A786331DBCB648339AE06F243BE1FEFE'>
+        <a href='dayone2://view?entryId=A786331DBCB648339AE06F243BE1FEFE'><h1 class='date'>Sunday, 19 June 2016 at 2:06 PM</h1></a>
+        <div class='location'>723 Sweeny St, San Francisco, CA, United States</div>
+        <div dir='auto'>
+            <h1>Weekly Log #12</h1>
+
+            <h1>UserTesting</h1>
+
+            <h2>Calabash</h2>
+
+            <p>This week I worked on Calabash. It’s the UI automation framework that works on Android and iOS. I mainly work on the Android side of the code.</p>
+
+            <h3>Undocumented behaviour</h3>
+
+            <p>One of the functionality that we needed in Calabash was the ability to pass data to the app being automated at runtime. This is so we can change certain functionality in the app for a particular test, such as setting a staging environment
+                URL. As such, the app would also need to be coded to handle such data being passed in and modify its own behaviour accordingly.</p>
+
+            <p>While this functionality is already there for iOS, it was sorely missing from the Android side of Calabash. After talking to one of our Android developers, Akshay, I discovered that Android could take in such data using the Intents system,
+                and I set out to find a way to inject them to Calabash’s launch Intent. After poring through the code, and even forking the Calabash-Android repository once, I discovered that the groundwork was already laid for this functionality, but
+                it was not documented in any form anywhere. There weren’t even forum or StackOverflow posts on the matter. Since I had found it, I filed an issue on their GitHub, and filed a card for the Android app to add functionality to handle such
+                runtime data parameters.</p>
+
+            <h1>WWDC</h1>
+
+            <p>It’s dub dub week, and Jurvis is attending it as a scholarship recipient.</p>
+
+            <p><img src='photos/c7d868881f9aac0817ad71d765806c00.jpeg'></p>
+
+            <p>This year, Apple renamed OS X to macOS, released a Siri SDK, and made watchOS faster. They also released a new file system to replace the aging HFS+. Awesome 🍎</p>
+
+            <h1>Saturday</h1>
+
+            <p>Over a month ago our UT supervisor showed us a video on how to make prata, and I was crazy enough to try it.</p>
+
+            <p><img src='photos/9297a94f7c66dd8d060ef7410ac14ac9.jpeg'></p>
+
+            <p>It turned out pretty well. It looks and tastes like prata. It’s just a bit too thick though, but it’s amazing for my first attempt at anything like it 😁</p>
+        </div>
+    </div>
+    <script src='javascript.js'></script>
+</body>
+
+</html>

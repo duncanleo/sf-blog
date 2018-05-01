@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel='stylesheet' type='text/css' href='stylesheet.css' />
+</head>
+
+<body id='body' dir='auto'>
+    <div class='entry' entryUUID='2FF1F7AF97364497A0A9261E4E61DDB2'>
+        <a href='dayone2://view?entryId=2FF1F7AF97364497A0A9261E4E61DDB2'><h1 class='date'>Sunday, 12 June 2016 at 2:06 PM</h1></a>
+        <div class='location'>723 Sweeny St, San Francisco, CA, United States</div>
+        <div dir='auto'>
+            <h1>Weekly Log #11</h1>
+
+            <h1>UserTesting</h1>
+
+            <h2>Dinner with Imad</h2>
+
+            <p>One of our colleagues, Imad, is returning to Morocco :( He’ll continue to be a UT employee working from remote :)</p>
+
+            <p><img src='photos/d91d79a01b3e8bc0f7d19657f29dc6f9.jpeg'></p>
+
+            <p>Iman said he wanted to try Singaporean food, so we brought him to a Singaporean restaurant in Cupertino 🍲</p>
+
+            <h2>GitHub functionality for Hubot</h2>
+
+            <p>I’ve been hacking on something for the hubot-based chatbot I built a couple of weeks earlier. The Engineering team would like to control PR merges for a particular repository, especially when it is being built or deployed via continuous integration.
+                The current method is to alert everyone on Slack not to merge, which works but is kind of clumsy :/</p>
+
+            <p>GitHub introduced their status mechanism a couple of years ago. It’s the thing that allows PRs to have checks like these:</p>
+
+            <p><img src='photos/3d46b0a60a586a0eb02d0381fe687c17.jpeg'></p>
+
+            <p>At first, it seemed to be impossible to add a custom check. If you went to the services setting of any repository, it seemed that GitHub only allowed a predefined list:</p>
+
+            <p><img src='photos/b2d100cdd75fb6e7937643f7e613b176.jpeg'></p>
+
+            <p>However, GitHub’s API seems to accept custom labels, and will create new ones when a custom string is POSTED in the <code>context</code> field:</p>
+
+            <p><img src='photos/1aa43d61c3e360e2e41cc34e0d128447.jpeg'></p>
+
+            <p>This custom functionality will eventually be realised as a command from Slack, which will mark all open PRs as allowed-to-merge or disallowed-to-merge accordingly.</p>
+
+            <h1>Friday</h1>
+
+            <p><img src='photos/a0278cc1b1a754bb4b64427954fb9d43.jpeg'></p>
+
+            <p>Our friend was visiting from Singapore as he was attending WWDC the following week. He brought along char kway teow from Jurvis’ grandparents. So good!</p>
+
+            <h1>Saturday</h1>
+
+            <p>I visited Apple HQ with the friend from Singapore. Unfortunately, it was a Saturday, so we couldn’t visit the campus beyond the Apple Store there, which is open to public.</p>
+
+            <p><img src='photos/2b389972bfe8fb77e6b26437f75627a8.jpeg'></p>
+
+            <p>Apple Store @ Apple Campus. It’s the store with the new exclusive tees.</p>
+
+            <p><img src='photos/3ac7475ff3dc8c65cf7b1b909bfe02fc.jpeg'></p>
+
+            <p>🍎💻🖥📱</p>
+        </div>
+    </div>
+    <script src='javascript.js'></script>
+</body>
+
+</html>
